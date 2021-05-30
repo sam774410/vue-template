@@ -1,0 +1,10 @@
+h1 {
+    color: red;
+}
+.loadspan {
+    float: left;
+    margin-left: 6px;
+    margin-top: -25px;
+    position: relative;
+    z-index: 2;
+}
