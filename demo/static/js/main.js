@@ -1,4 +1,4 @@
-const { reactive, ref, watch, onMounted } = Vue;
+const { reactive, ref, watch, onMounted, onUpdated } = Vue;
 
 
 const App = {
@@ -7,7 +7,6 @@ const App = {
     let testa = 'test from vue 123';
     let mdate = ref("");
     let records = ref([]);
-    
 
     onMounted(()=>{
       axios.get('https://jsonplaceholder.typicode.com/todos')
@@ -25,7 +24,17 @@ const App = {
       .then(function () {
         // always executed
       });
+
+      
     });
+
+    onUpdated(()=>{
+      /**
+       * get nt & lookup id => picture
+       */
+      let nt = $("#nt").text();
+      console.log(`my NT: ${nt}`)
+    })
     
     let hi = () => {
       swal("Good job!", "You clicked the button!", "success");
@@ -34,7 +43,7 @@ const App = {
     let update_row = (idx)=> {
       // console.log(idx);
       console.log(records.value[idx])
-     
+
     }
     
     let review_date = () =>{

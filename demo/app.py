@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route("/", methods=['GET', 'POST'])
 def hello():
-    return render_template('index.htm', a='from flask')
+    return render_template('index.htm', a='mslyu')
     #return "456"
 
 if __name__ == '__main__':
